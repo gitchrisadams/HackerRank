@@ -6,7 +6,7 @@
 
 function hourglassSum(arr) {
     let inputArray = arr;
-    let highestSum = 0;
+    let highestSum = -100;
 
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
