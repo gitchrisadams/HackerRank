@@ -5,40 +5,25 @@
 */
 
 function hourglassSum(arr) {
-    // Write your code here
     let inputArray = arr;
     let highestSum = 0;
 
-    for (let i = 0; i < 6; i++) {
-        for (let j = 0; j < 6; j++) {
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
             let inputArraySum = 0;
             inputArraySum +=
                 inputArray[i][j] + inputArray[i][j + 1] + inputArray[i][j + 2];
-            i < 5 && (inputArraySum += inputArray[i + 1][j + 1]);
-            i < 4 &&
-                (inputArraySum +=
-                    inputArray[i + 2][0] +
+                inputArraySum += inputArray[i + 1][j + 1];
+
+                inputArraySum +=
+                    inputArray[i + 2][j] +
                     inputArray[i + 2][j + 1] +
-                    inputArray[i + 2][j + 2]);
+                    inputArray[i + 2][j + 2];
             if (inputArraySum > highestSum) {
                 highestSum = inputArraySum;
             }
-            console.log("inputArraySum", inputArraySum);
         }
     }
-
-    // let inputArraySum1 = 0;
-    // inputArraySum1 += inputArray[1][0] + inputArray[1][1] + inputArray[1][2];
-    // inputArraySum1 += inputArray[2][1];
-    // inputArraySum1 += inputArray[3][0] + inputArray[3][1] + inputArray[3][2];
-
-    // if (inputArraySum1 > highestSum) {
-    //     highestSum = inputArraySum1;
-    // }
-    // console.log("inputArraySum1", inputArraySum1);
-
-    console.log("returning highestSum", highestSum);
-
     return highestSum;
 }
 
